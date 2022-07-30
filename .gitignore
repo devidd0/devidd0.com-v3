@@ -36,6 +36,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-/portofliov3studio
+/pintistudio
 
 .vercel

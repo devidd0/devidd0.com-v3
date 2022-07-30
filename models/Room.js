@@ -12,8 +12,7 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 export default function Model(props) {
-  const roomRef = useRef(); 
-  console.log(roomRef.current)
+  const roomRef = useRef();
   const { nodes, materials } = useGLTF("./room_02__magica_voxel/Room.gltf");
   useFrame((state, delta) => {
     roomRef.current.rotation.y = THREE.MathUtils.lerp(

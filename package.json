@@ -9,11 +9,15 @@
     "@react-spring/three": "^9.5.2",
     "@react-three/drei": "^9.17.3",
     "@react-three/fiber": "^8.2.1",
+    "@reduxjs/toolkit": "^1.8.3",
+    "@sanity/client": "^3.3.2",
     "framer-motion": "^6.5.1",
     "next": "latest",
+    "next-themes": "^0.2.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",
+    "react-redux": "^8.0.2",
     "three": "^0.142.0"
   },
   "devDependencies": {
