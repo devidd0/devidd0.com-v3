@@ -32,7 +32,7 @@ const Header = () => {
   };
   const { theme, setTheme } = useTheme();
   return (
-    <header className="flex backdrop-blur-md items-center px-80 h-16  justify-between text-white font-mono  z-[999]  fixed w-full top-0">
+    <header className="flex backdrop-blur-md bg-[#F5F0E8]/60 dark:bg-transparent items-center px-80 h-16  justify-between text-white font-mono  z-[999]  fixed w-full top-0">
       <div className="flex gap-x-10">
         <div className="flex items-center gap-x-2 text-xl group dark:text-white text-themeBlack">
           <SiFoodpanda className=" group-hover:-translate-x-[1px] transition-transform  group-hover:rotate-2 origin-top" />
@@ -46,7 +46,7 @@ const Header = () => {
               <a
                 className={` hover:underline dark:text-white text-themeBlack hover:text-black underline-offset-2 px-4 py-2 dark:hover:text-white  ${
                   router.asPath == menu.path &&
-                  "  hover:text-black bg-themeCyan text-black  rounded "
+                  "  hover:text-black bg-themeCyan dark:text-black  rounded "
                 }`}
               >
                 {menu.title}
@@ -60,7 +60,7 @@ const Header = () => {
           setTheme(theme == "white" ? "dark" : "white");
         }}
         className={`rounded-md transition-colors flex items-center  justify-center  overflow-hiddentext-lg ${
-          theme == "white" ? "bg-themeYellow text-black" : "bg-themePurple"
+          theme == "white" ? "bg-themePurple " : "bg-themeYellow text-black"
         } w-10 h-10  cursor-pointer hover:border-gray-300`}
       >
         {" "}

@@ -65,10 +65,10 @@ const Index = () => {
       </div>
       <div className="dark:text-white flex mb-6  w-full items-start justify-between">
         <div>
-          <h2 className="text-3xl tracking-widest font-semibold mb-1">
+          <h1 className="text-3xl tracking-widest font-semibold mb-1">
             Aziz Imranzade
-          </h2>
-          <p className="dark:text-gray-300">
+          </h1>
+          <p>
             Front End Developer(Developer/Gamer)
           </p>
         </div>
@@ -80,7 +80,7 @@ const Index = () => {
         <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold text-2xl mb-3">
           Work
         </h2>
-        <p className="dark:text-gray-300 text-themeBlack">
+        <p>
           First of all HELLO For now I am student at Baku but I try to find a
           freelance work Lorem ipsum dolor sit amet consectetur adipisicing
           elit. Quisquam totam dolorem adipisci laudantium excepturi praesentium
@@ -89,7 +89,7 @@ const Index = () => {
         </p>
         <Link href={"/works"}>
           <a className="mt-3 text-[#333] hover:bg-themeCyan/ transition-colors gap-x-2 group w-36 h-10 font-semibold rounded  inline-flex items-center justify-center bg-themeCyan">
-            <p>My Works</p>
+            <span>My Works</span>
             <MdKeyboardArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
           </a>
         </Link>

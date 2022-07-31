@@ -1,15 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import client from "../helpers/client";
+import client from "../../helpers/client";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 const works = () => {
   const animations = {
-    initial: { opacity: 0, y: 100 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -100 },
+    initial: { opacity: 0, y: -100 },
+    animate: { opacity: 1, y: [-10, 0] },
   };
   const [works, setWorks] = useState([]);
   useEffect(() => {
@@ -32,7 +31,6 @@ const works = () => {
       )
       .then((data) => {
         setWorks(data);
-        console.log(data);
       });
   }, []);
   return (
@@ -46,7 +44,7 @@ const works = () => {
       exit={"exit"}
       className=" w-[40rem] font-mono flex-col flex text-white "
     >
-      <h1 className="text-2xl mb-4">Works</h1>
+      <h1 className="text-2xl  mb-4">Works</h1>
       <div className="w-full  flex flex-wrap   relative gap-6 ">
         {works.length == 0 ? (
           <img src="./loading.svg" className="mx-auto" />
@@ -64,7 +62,7 @@ const works = () => {
                     objectPosition={"center"}
                   />
                 </div>
-                <h2 className="text-white mx-auto text-xl mb-2 capitalize">
+                <h2 className=" mx-auto text-xl mb-2 capitalize">
                   {work.title}
                 </h2>
                 <p>{work.summary}</p>

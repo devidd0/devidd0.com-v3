@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-h2 {
+h2,
+h1,
+h3,
+h4,
+h5 {
   @apply dark:text-gray-200 text-themeBlack;
+}
+p {
+  @apply dark:text-gray-300 text-themeBlack;
 }

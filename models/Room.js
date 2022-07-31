@@ -13,7 +13,7 @@ import * as THREE from "three";
 
 export default function Model(props) {
   const roomRef = useRef();
-  const { nodes, materials } = useGLTF("./room_02__magica_voxel/Room.gltf");
+  const { nodes, materials } = useGLTF("/room_02__magica_voxel/Room.gltf");
   useFrame((state, delta) => {
     roomRef.current.rotation.y = THREE.MathUtils.lerp(
       roomRef.current.rotation.y,
@@ -50,4 +50,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("./room_02__magica_voxel/Room.gltf");
+useGLTF.preload("/room_02__magica_voxel/Room.gltf");
