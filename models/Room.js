@@ -8,45 +8,38 @@ title: Room 02 / Magica Voxel
 
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import { motion } from "framer-motion-3d";
+import { MotionConfig } from "framer-motion";
 import { useFrame } from "@react-three/fiber";
-import * as THREE from "three";
-
 export default function Model(props) {
   const roomRef = useRef();
   const { nodes, materials } = useGLTF("/room_02__magica_voxel/Room.gltf");
   useFrame((state, delta) => {
-    roomRef.current.rotation.y = THREE.MathUtils.lerp(
-      roomRef.current.rotation.y,
-      (Math.PI / 180) * 610,
-      delta
-    );
-    roomRef.current.scale.x = THREE.MathUtils.lerp(
-      roomRef.current.scale.x,
-      0.2,
-      delta
-    );
-    roomRef.current.scale.y = THREE.MathUtils.lerp(
-      roomRef.current.scale.y,
-      0.2,
-      delta
-    );
-    roomRef.current.scale.z = THREE.MathUtils.lerp(
-      roomRef.current.scale.z,
-      0.2,
-      delta
-    );
+    roomRef.current.rotation.y += 0.01;
   });
   return (
-    <group castShadow ref={roomRef} {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group position={[-16, -16, 0]}>
-          <mesh
-            geometry={nodes.Object_2.geometry}
-            material={materials["Scene_-_Root"]}
-          />
+    <MotionConfig
+      transition={{
+        duration: 2,
+        type: "tween",
+      }}
+    >
+      <motion.group
+        animate={{ scale: 0.2, rotateY: (Math.PI / 180) * 610 }}
+        ref={roomRef}
+        {...props}
+        dispose={null}
+      >
+        <group rotation={[-Math.PI / 2, 0, 0]}>
+          <group position={[-16, -16, 0]}>
+            <mesh
+              geometry={nodes.Object_2.geometry}
+              material={materials["Scene_-_Root"]}
+            />
+          </group>
         </group>
-      </group>
-    </group>
+      </motion.group>
+    </MotionConfig>
   );
 }
 

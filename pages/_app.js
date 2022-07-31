@@ -15,6 +15,7 @@ import {
   PresentationControls,
   useHelper,
 } from "@react-three/drei";
+import { Toaster } from "react-hot-toast";
 function MyApp({ Component, pageProps }) {
   //!Lights
   const Lights = () => {
@@ -77,6 +78,7 @@ function MyApp({ Component, pageProps }) {
         <div
           className={`flex flex-col  w-full items-center  dark:bg-themeBlack bg-[#F0E7DB] min-h-screen`}
         >
+          <Toaster position="top-right" />
           <div className="h-[20rem]  mt-10 w-[30rem] flex-shrink-0 ">
             <NoSsr>
               <ModelScene />

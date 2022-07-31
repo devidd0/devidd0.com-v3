@@ -44,7 +44,6 @@ const Index = () => {
   const animations = {
     initial: { opacity: 0, y: 100 },
     animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -100 },
   };
 
   const { theme } = useTheme();
@@ -54,11 +53,11 @@ const Index = () => {
       initial={"initial"}
       animate={"animate"}
       transition={{
-        duration: 2,
+        duration: 1,
         type: "tween",
       }}
       exit={"exit"}
-      className=" w-[40rem] font-mono "
+      className=" w-[40rem] font-mono  "
     >
       <div className="dark:bg-[#ffffff14] bg-[#F5F0E8] rounded-lg  mb-5 dark:text-white text-themeBlack w-full h-12 flex items-center justify-center">
         Hello I am Aziz Front End Developer From Azerbaijan
@@ -68,9 +67,7 @@ const Index = () => {
           <h1 className="text-3xl tracking-widest font-semibold mb-1">
             Aziz Imranzade
           </h1>
-          <p>
-            Front End Developer(Developer/Gamer)
-          </p>
+          <p>Front End Developer(Developer/Gamer)</p>
         </div>
         <div className=" w-28 h-28 relative rounded-full overflow-hidden border-2 border-gray">
           <Image src="/avatar.jpg" layout="fill" />

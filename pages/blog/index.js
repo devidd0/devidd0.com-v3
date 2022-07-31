@@ -5,16 +5,16 @@ import client from "../../helpers/client";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-const works = () => {
+const posts = () => {
   const animations = {
     initial: { opacity: 0, y: 100 },
     animate: { opacity: 1, y: 0 },
   };
-  const [works, setWorks] = useState([]);
+  const [posts, setPosts] = useState([]);
   useEffect(() => {
     client
       .fetch(
-        `*[_type=="works"]{
+        `*[_type=="post"]{
         body,
         title,
         summary,
@@ -30,7 +30,7 @@ const works = () => {
       }`
       )
       .then((data) => {
-        setWorks(data);
+        setPosts(data);
       });
   }, []);
   return (
@@ -44,17 +44,17 @@ const works = () => {
       exit={"exit"}
       className=" w-[40rem] mt-12  font-mono flex-col flex text-white "
     >
-      <h1 className="text-2xl  mb-4">Works</h1>
+      <h1 className="text-2xl  mb-4">Blog Posts</h1>
       <div className="w-full  flex flex-wrap   relative gap-6 ">
-        {works.length == 0 ? (
+        {posts.length == 0 ? (
           <img src="./loading.svg" className="mx-auto" />
         ) : (
-          works.map((work, indeks) => (
-            <Link key={indeks} href={`works/${work.slug.current}`}>
+          posts.map((post, indeks) => (
+            <Link key={indeks} href={`blog/${post.slug.current}`}>
               <a className=" w-72 flex-col h-60  flex  overflow-hidden object-cover">
                 <div className="h-36 w-full relative mb-3 rounded-lg overflow-hidden">
                   <Image
-                    src={work.mainImage.asset.url}
+                    src={post.mainImage.asset.url}
                     layout="fill"
                     placeholder="blur"
                     blurDataURL={"./loading.gif"}
@@ -63,9 +63,9 @@ const works = () => {
                   />
                 </div>
                 <h2 className=" mx-auto text-xl mb-2 capitalize">
-                  {work.title}
+                  {post.title}
                 </h2>
-                <p>{work.summary}</p>
+                <p>{post.summary}</p>
               </a>
             </Link>
           ))
@@ -75,4 +75,4 @@ const works = () => {
   );
 };
 
-export default works;
+export default posts;
