@@ -17,6 +17,7 @@ const Component = (props) => {
       setCopied(false);
     }, 3000);
   }, [copied]);
+  console.log(props);
   return (
     <div className="relative">
       <SyntaxHighlighter
@@ -25,15 +26,17 @@ const Component = (props) => {
       >
         {props.node.code}
       </SyntaxHighlighter>
-      <div
-        onClick={() => {
-          copy(props.node.code);
-          toast.success('Code Block Copied')
-        }}
-        className="absolute top-2 right-2 hover:scale-[1.1] cursor-pointer transition-transform"
-      >
-        <HiOutlineClipboardCopy size={21} />
-      </div>
+      {props.showCopy ? (
+        <div
+          onClick={() => {
+            copy(props.node.code);
+            toast.success("Code Block Copied");
+          }}
+          className="absolute top-2 right-2 hover:scale-[1.1] cursor-pointer transition-transform"
+        >
+          <HiOutlineClipboardCopy size={21} />
+        </div>
+      ) : null}
     </div>
   );
 };

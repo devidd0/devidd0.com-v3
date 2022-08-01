@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
+import Pre from "../components/blog/Pre";
 import {
   AiFillGithub,
   AiOutlineInstagram,
@@ -12,6 +12,7 @@ import {
 import { FiFacebook, FiTwitter } from "react-icons/fi";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useTheme } from "next-themes";
+import getDate from "../helpers/getAge";
 const Index = () => {
   //Social Media array
   const [socialMedia] = useState([
@@ -47,6 +48,22 @@ const Index = () => {
   };
 
   const { theme } = useTheme();
+
+  const props = {
+    node: {
+      code: `{
+  born:2006,
+  age: ${getDate("2006/04/04")},
+  love_to_do:['Coding, Learning New Skills, Gaming','GYM'],
+  married:false,
+  job:'Front-End Developer',
+  technolgies:['Html','Css','JavaScript','React','NextJs','TaiwlindCss','Firebase',]
+}
+  `,
+      language: "json",
+    },
+  };
+
   return (
     <motion.div
       variants={animations}
@@ -57,24 +74,24 @@ const Index = () => {
         type: "tween",
       }}
       exit={"exit"}
-      className=" w-[40rem] font-mono  "
+      className=" sm:w-[40rem] w-full px-8 sm:px-0  "
     >
-      <div className="dark:bg-[#ffffff14] bg-[#F5F0E8] rounded-lg  mb-5 dark:text-white text-themeBlack w-full h-12 flex items-center justify-center">
-        Hello I am Aziz Front End Developer From Azerbaijan
+      <div className="dark:bg-[#ffffff14] bg-[#F5F0E8] text-center px-3 sm:px-0   rounded-lg  mb-5 dark:text-white text-themeBlack w-full sm:h-12 h-14 flex items-center justify-center">
+        <p>Hello I am Aziz Front End Developer From Azerbaijan</p>
       </div>
       <div className="dark:text-white flex mb-6  w-full items-start justify-between">
         <div>
-          <h1 className="text-3xl tracking-widest font-semibold mb-1">
+          <h1 className="sm:text-3xl text-xl tracking-widest font-semibold mb-1">
             Aziz Imranzade
           </h1>
           <p>Front End Developer(Developer/Gamer)</p>
         </div>
-        <div className=" w-28 h-28 relative rounded-full overflow-hidden border-2 border-gray">
-          <Image src="/avatar.jpg" layout="fill" />
+        <div className=" sm:w-28 sm:h-28 w-24 flex-shrink-0 h-24 relative rounded-full overflow-hidden border-2 border-gray">
+          <Image src="/avatar.jpg" layout="fill" objectFit="contain" />
         </div>
       </div>
       <div className="my-7">
-        <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold text-2xl mb-3">
+        <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-3">
           Work
         </h2>
         <p>
@@ -92,29 +109,26 @@ const Index = () => {
         </Link>
       </div>
       <div className="my-7">
-        <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold text-2xl mb-4">
+        <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-4">
           About Me
         </h2>
-        <div className="relative w-full  h-[15rem] ">
-          <Image
-            src={theme == "white" ? "/carbonwhite.svg" : "/carbon.svg"}
-            layout={"fill"}
-          />
+        <div className="relative w-full   sm:h-[15rem] h-[10rem] ">
+          <Pre {...props} showCopy={false} />
         </div>
       </div>
-      <div className="my-7">
-        <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold text-2xl mb-4">
+      <div className="my-14">
+        <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-lg mb-4">
           Social Media
         </h2>
 
-        <ul className="flex w-full   gap-y-2 flex-wrap">
+        <ul className="flex w-full   sm:gap-y-2 gap-y-1 flex-wrap">
           {socialMedia &&
             socialMedia.map((item, indeks) => (
               <li className=" list-none" key={indeks}>
                 <Link href={item.link}>
                   <a
                     target={"_blank"}
-                    className=" inline-flex gap-x-2 transition-all  hover:underline underline-offset-4 decoration-themePink rounded-md dark:text-themeCyan text-[#2C7A7B] items-center h-10 px-4 hover:bg-[#2C7A7B]/20"
+                    className=" inline-flex gap-x-2 transition-all  hover:underline underline-offset-4 decoration-themePink rounded-md dark:text-themeCyan text-[#2C7A7B] items-center h-10 sm:px-4 px-3 hover:bg-[#2C7A7B]/20"
                   >
                     <span className="text-xl">{item.icon}</span>
                     <p>{item.username}</p>

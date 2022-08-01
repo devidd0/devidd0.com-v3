@@ -39,9 +39,7 @@ const workdetail = () => {
   }, [router.query.post]);
   const serializers = {
     types: {
-      code: (props) => (
-        <Pre {...props} />
-      ),
+      code: (props) => <Pre {...props} showCopy={true} />,
     },
     marks: {
       link: (props) => (
@@ -63,7 +61,7 @@ const workdetail = () => {
         duration: 1,
         type: "tween",
       }}
-      className="w-[40rem] flex flex-col gap-y-6 "
+      className="sm:w-[40rem] w-full px-6 sm:px-0 flex flex-col gap-y-6 "
     >
       {detail ? (
         <>
@@ -75,7 +73,9 @@ const workdetail = () => {
             </Link>
             <MdKeyboardArrowRight size={20} />
             <div className="flex items-center  gap-x-1">
-              <p className="text-2xl font-semibold">{detail.title}</p>
+              <p className="sm:text-2xl text-lg font-semibold">
+                {detail.title}
+              </p>
               <p className=" text-xs font-semibold bg-white/50 rounded-md px-2 py-1">
                 {detail.publishedAt.slice(0, 4)}
               </p>
@@ -94,7 +94,7 @@ const workdetail = () => {
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             dataset="production"
             serializers={serializers}
-            className={"prose dark:prose-invert"}
+            className={"sm:prose prose-sm dark:prose-invert"}
           />
         </>
       ) : (

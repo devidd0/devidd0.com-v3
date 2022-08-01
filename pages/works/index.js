@@ -42,16 +42,16 @@ const works = () => {
         duration: 1,
       }}
       exit={"exit"}
-      className=" w-[40rem] mt-12  font-mono flex-col flex text-white "
+      className=" sm:w-[40rem] px-8 sm:px-0  w-full mt-12   flex-col flex text-white "
     >
-      <h1 className="text-2xl  mb-4">Works</h1>
-      <div className="w-full  flex flex-wrap   relative gap-6 ">
+      <h1 className="text-2xl  mb-4 ">Works</h1>
+      <div className="w-full  flex flex-wrap  justify-center   relative sm:gap-6 gap-3 ">
         {works.length == 0 ? (
           <img src="./loading.svg" className="mx-auto" />
         ) : (
           works.map((work, indeks) => (
             <Link key={indeks} href={`works/${work.slug.current}`}>
-              <a className=" w-72 flex-col h-60  flex  overflow-hidden object-cover">
+              <a className=" sm:w-72 w-60 flex-col h-60   flex  overflow-hidden object-cover">
                 <div className="h-36 w-full relative mb-3 rounded-lg overflow-hidden">
                   <Image
                     src={work.mainImage.asset.url}
@@ -65,7 +65,7 @@ const works = () => {
                 <h2 className=" mx-auto text-xl mb-2 capitalize">
                   {work.title}
                 </h2>
-                <p>{work.summary}</p>
+                <p className="text-center">{work.summary}</p>
               </a>
             </Link>
           ))

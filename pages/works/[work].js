@@ -5,6 +5,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import client from "../../helpers/client";
 import BlockContent, { propTypes } from "@sanity/block-content-to-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 const workdetail = () => {
   const router = useRouter();
   const [detail, setDetail] = useState();
@@ -53,7 +54,7 @@ const workdetail = () => {
         duration: 1,
         type: "tween",
       }}
-      className="w-[40rem] flex flex-col gap-y-6 "
+      className="sm:w-[40rem] w-full px-6 sm:px-0 flex flex-col gap-y-6 "
     >
       {detail ? (
         <>
@@ -65,18 +66,28 @@ const workdetail = () => {
             </Link>
             <MdKeyboardArrowRight size={20} />
             <div className="flex items-center  gap-x-1">
-              <p className="text-2xl font-semibold">{detail.title}</p>
+              <p className="sm:text-2xl text-lg font-semibold">
+                {detail.title}
+              </p>
               <p className=" text-xs font-semibold bg-white/50 rounded-md px-2 py-1">
                 {detail.publishedAt.slice(0, 4)}
               </p>
             </div>
           </h1>
+          <div className="w-full h-40 relative overflow-hidden rounded-md">
+            <Image
+              src={detail.mainImage.asset.url}
+              objectFit="cover"
+              layout="fill"
+              objectPosition={"center"}
+            />
+          </div>
           <BlockContent
             blocks={detail.body}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             dataset="production"
-            serializers={{ marks: serializers.marks }}
-            className={"prose dark:prose-invert"}
+            serializers={serializers}
+            className={"sm:prose prose-sm  dark:prose-invert"}
           />
         </>
       ) : (

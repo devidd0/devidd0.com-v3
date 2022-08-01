@@ -76,10 +76,10 @@ function MyApp({ Component, pageProps }) {
     <AnimatePresence exitBeforeEnter={true}>
       <ThemeProvider attribute="class">
         <div
-          className={`flex flex-col  w-full items-center  dark:bg-themeBlack bg-[#F0E7DB] min-h-screen`}
+          className={`flex flex-col  font-sans w-full items-center  dark:bg-themeBlack bg-[#F0E7DB] min-h-screen`}
         >
           <Toaster position="top-right" />
-          <div className="h-[20rem]  mt-10 w-[30rem] flex-shrink-0 ">
+          <div className="h-60 sm:h-80 sm:w-[30rem] w-full  mt-10 flex-shrink-0 ">
             <NoSsr>
               <ModelScene />
             </NoSsr>

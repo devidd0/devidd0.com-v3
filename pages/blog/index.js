@@ -42,10 +42,10 @@ const posts = () => {
         duration: 1,
       }}
       exit={"exit"}
-      className=" w-[40rem] mt-12  font-mono flex-col flex text-white "
+      className=" sm:w-[40rem] px-8 sm:px-0   w-full mt-12  font-mono flex-col flex text-white "
     >
       <h1 className="text-2xl  mb-4">Blog Posts</h1>
-      <div className="w-full  flex flex-wrap   relative gap-6 ">
+      <div className="w-full  flex flex-wrap  justify-center   relative sm:gap-6 gap-3 ">
         {posts.length == 0 ? (
           <img src="./loading.svg" className="mx-auto" />
         ) : (
@@ -65,7 +65,7 @@ const posts = () => {
                 <h2 className=" mx-auto text-xl mb-2 capitalize">
                   {post.title}
                 </h2>
-                <p>{post.summary}</p>
+                <p className="text-center">{post.summary}</p>
               </a>
             </Link>
           ))
