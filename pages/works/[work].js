@@ -6,6 +6,8 @@ import client from "../../helpers/client";
 import BlockContent, { propTypes } from "@sanity/block-content-to-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Pre from "../../components/blog/Pre";
+import Head from "next/head";
 const workdetail = () => {
   const router = useRouter();
   const [detail, setDetail] = useState();
@@ -16,7 +18,7 @@ const workdetail = () => {
           `*[slug.current == "${router.query.work}"]{
           body,
           title,
-          excerpt,
+          summary,
           publishedAt,
           mainImage{
             asset->{
@@ -30,7 +32,9 @@ const workdetail = () => {
           "authorImage":author->image
         }`
         )
-        .then((data) => setDetail(data[0]));
+        .then((data) => {
+          setDetail(data[0]);
+        });
     }
   }, [router.query.work]);
   const serializers = {
@@ -45,6 +49,9 @@ const workdetail = () => {
         </a>
       ),
     },
+    types: {
+      code: (props) => <Pre {...props} showCopy={true} />,
+    },
   };
   return (
     <motion.main
@@ -54,10 +61,19 @@ const workdetail = () => {
         duration: 1,
         type: "tween",
       }}
-      className="sm:w-[40rem] w-full px-6 sm:px-0 flex flex-col gap-y-6 "
+      className="sm:w-[40rem] min-h-screen w-full px-6 sm:px-0 flex flex-col gap-y-6 "
     >
       {detail ? (
         <>
+          <Head>
+            <title>Works | {router.query.work}</title>
+            <meta name="description" content={detail.summary} />
+            <meta name="og:description" content={detail.summary} />
+            <meta
+              name="og:title"
+              content={"Project By PintiDev  " + router.query.work}
+            />
+          </Head>
           <h1 className="flex items-end  gap-x-1 ">
             <Link href={"/works"}>
               <a className="text-cyan-500 dark:text-themePink hover:underline underline-offset-4">

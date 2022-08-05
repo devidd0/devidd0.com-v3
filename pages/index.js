@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import Pre from "../components/blog/Pre";
 import {
@@ -13,6 +12,8 @@ import { FiFacebook, FiTwitter } from "react-icons/fi";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useTheme } from "next-themes";
 import getDate from "../helpers/getAge";
+import SocialMediaButton from "../components/index/socialMediaButton";
+import Head from "next/head";
 const Index = () => {
   //Social Media array
   const [socialMedia] = useState([
@@ -46,9 +47,6 @@ const Index = () => {
     initial: { opacity: 0, y: 100 },
     animate: { opacity: 1, y: 0 },
   };
-
-  const { theme } = useTheme();
-
   const props = {
     node: {
       code: `{
@@ -63,7 +61,7 @@ const Index = () => {
       language: "json",
     },
   };
-
+  const downloadCv = () => {};
   return (
     <motion.div
       variants={animations}
@@ -76,6 +74,15 @@ const Index = () => {
       exit={"exit"}
       className=" sm:w-[40rem] w-full px-8 sm:px-0  "
     >
+      <Head>
+        <title>PintiDev | Home</title>
+        <meta
+          name="description"
+          content="Aziz Imranzade (PintiDev) Front End Developer Home Page About PintiDev"
+        />
+        <meta name="og:title" content="PintiDev Official Web Page" />
+        <meta name="og:url" content="https://pintidev.vercel.app/" />
+      </Head>
       <div className="dark:bg-[#ffffff14] bg-[#F5F0E8] text-center px-3 sm:px-0   rounded-lg  mb-5 dark:text-white text-themeBlack w-full sm:h-12 h-14 flex items-center justify-center">
         <p>Hello I am Aziz Front End Developer From Azerbaijan</p>
       </div>
@@ -87,7 +94,12 @@ const Index = () => {
           <p>Front End Developer(Developer/Gamer)</p>
         </div>
         <div className=" sm:w-28 sm:h-28 w-24 flex-shrink-0 h-24 relative rounded-full overflow-hidden border-2 border-gray">
-          <Image src="/avatar.jpg" layout="fill" objectFit="contain" />
+          <Image
+            src="/avatar.jpg"
+            layout="fill"
+            objectFit="contain"
+            alt="PintiDev Avatar"
+          />
         </div>
       </div>
       <div className="my-7">
@@ -101,12 +113,14 @@ const Index = () => {
           quia, mollitia incidunt quae facilis culpa officiis laboriosam quis,
           nisi veniam, laborum repellat recusandae odio?
         </p>
-        <Link href={"/works"}>
-          <a className="mt-3 text-[#333] hover:bg-themeCyan/ transition-colors gap-x-2 group w-36 h-10 font-semibold rounded  inline-flex items-center justify-center bg-themeCyan">
-            <span>My Works</span>
-            <MdKeyboardArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
-          </a>
-        </Link>
+        <a
+          download={"PintiDevCv"}
+          href="/PintiDevAzizCv.pdf"
+          className="mt-3 text-[#333] hover:bg-themeCyan/ transition-colors gap-x-2 group w-36 h-10 font-semibold rounded  inline-flex items-center justify-center bg-themeCyan"
+        >
+          <span>My Resume</span>
+          <MdKeyboardArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
+        </a>
       </div>
       <div className="my-7">
         <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-4">
@@ -125,15 +139,11 @@ const Index = () => {
           {socialMedia &&
             socialMedia.map((item, indeks) => (
               <li className=" list-none" key={indeks}>
-                <Link href={item.link}>
-                  <a
-                    target={"_blank"}
-                    className=" inline-flex gap-x-2 transition-all  hover:underline underline-offset-4 decoration-themePink rounded-md dark:text-themeCyan text-[#2C7A7B] items-center h-10 sm:px-4 px-3 hover:bg-[#2C7A7B]/20"
-                  >
-                    <span className="text-xl">{item.icon}</span>
-                    <p>{item.username}</p>
-                  </a>
-                </Link>
+                <SocialMediaButton
+                  link={item.link}
+                  icon={item.icon}
+                  username={item.username}
+                />
               </li>
             ))}
         </ul>

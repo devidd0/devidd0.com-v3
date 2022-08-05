@@ -5,6 +5,7 @@ import client from "../../helpers/client";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Head from "next/head";
 const works = () => {
   const animations = {
     initial: { opacity: 0, y: 100 },
@@ -42,10 +43,17 @@ const works = () => {
         duration: 1,
       }}
       exit={"exit"}
-      className=" sm:w-[40rem] px-8 sm:px-0  w-full mt-12   flex-col flex text-white "
+      className=" sm:w-[40rem] px-8 sm:px-0  w-full mt-12 min-h-screen   flex-col flex text-white "
     >
+      <Head>
+        <title>PintiDev | Works</title>
+        <meta
+          name="description"
+          content="PintiDev Work In this page you can look my works live demo soruce codes and other stuff"
+        />
+      </Head>
       <h1 className="text-2xl  mb-4 ">Works</h1>
-      <div className="w-full  flex flex-wrap  justify-center   relative sm:gap-6 gap-3 ">
+      <main className="w-full  flex flex-wrap  justify-center   relative sm:gap-6 gap-3 ">
         {works.length == 0 ? (
           <img src="./loading.svg" className="mx-auto" />
         ) : (
@@ -54,7 +62,7 @@ const works = () => {
               <a className=" sm:w-72 w-60 flex-col h-60   flex  overflow-hidden object-cover">
                 <div className="h-36 w-full relative mb-3 rounded-lg overflow-hidden">
                   <Image
-                    src={work.mainImage.asset.url}
+                    src={work.mainImage.asset.url || "/loading.svg"}
                     layout="fill"
                     placeholder="blur"
                     blurDataURL={"./loading.gif"}
@@ -70,7 +78,7 @@ const works = () => {
             </Link>
           ))
         )}
-      </div>
+      </main>
     </motion.div>
   );
 };

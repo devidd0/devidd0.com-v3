@@ -5,6 +5,7 @@ import client from "../../helpers/client";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Head from "next/head";
 const posts = () => {
   const animations = {
     initial: { opacity: 0, y: 100 },
@@ -42,10 +43,17 @@ const posts = () => {
         duration: 1,
       }}
       exit={"exit"}
-      className=" sm:w-[40rem] px-8 sm:px-0   w-full mt-12  font-mono flex-col flex text-white "
+      className=" sm:w-[40rem] px-8 sm:px-0   w-full sm:mt-12 min-h-screen font-mono flex-col flex text-white "
     >
+      <Head>
+        <title>PintiDev | Blog</title>
+        <meta
+          name="description"
+          content="PintiDev Blog Posts ,Coding Tutorials, Blog Posts from my life and Dev Journey"
+        />
+      </Head>
       <h1 className="text-2xl  mb-4">Blog Posts</h1>
-      <div className="w-full  flex flex-wrap  justify-center   relative sm:gap-6 gap-3 ">
+      <main className="w-full  flex flex-wrap  justify-center   relative sm:gap-6 gap-3 ">
         {posts.length == 0 ? (
           <img src="./loading.svg" className="mx-auto" />
         ) : (
@@ -70,7 +78,7 @@ const posts = () => {
             </Link>
           ))
         )}
-      </div>
+      </main>
     </motion.div>
   );
 };

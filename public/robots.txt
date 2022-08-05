@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://pintidev.vercel.app
+
+# Sitemaps
+Sitemap: https://pintidev.vercel.app/sitemap.xml
+Sitemap: https://pintidev.vercel.app/sitemap-blog.xml
+Sitemap: https://pintidev.vercel.app/sitemap-works.xml

@@ -2,12 +2,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { SiFoodpanda } from "react-icons/si";
 import { BsSun } from "react-icons/bs";
 import { MdOutlineDarkMode, MdSendToMobile } from "react-icons/md";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { AiOutlineMenu } from "react-icons/ai";
+import Logo from "../Logo";
 const Header = () => {
   /*
     Menu routes
@@ -23,6 +23,10 @@ const Header = () => {
     {
       title: "Blog",
       path: "/blog",
+    },
+    {
+      title: "Credits",
+      path: "/credits",
     },
   ]);
   //! Router
@@ -47,30 +51,22 @@ const Header = () => {
     console.log(window.innerWidth);
   }, [window.innerWidth]);
   return (
-    <header className="flex backdrop-blur-md bg-[#F5F0E8]/60 dark:bg-transparent items-center sm:px-80 px-10 h-16  justify-between text-white font-mono z-[900]  fixed w-full top-0">
+    <header className="flex backdrop-blur-md bg-[#F5F0E8]/60 dark:bg-transparent items-center sm:px-80 px-8 h-16  justify-between text-white font-mono z-[900]  fixed w-full top-0">
       <div className="flex gap-x-10">
-        <div className="flex items-center gap-x-2 text-xl group dark:text-white text-themeBlack">
-          <SiFoodpanda className=" group-hover:-translate-x-[1px] transition-transform  group-hover:rotate-2 origin-top" />
-          <Link href={"/"}>
-            <a className="font-semibold tracking-wider"> PintiDev</a>
-          </Link>
-        </div>
+        <Logo />
         <motion.ul
           variants={mobile ? menuVariants : null}
           initial={menu ? "open" : "close"}
           animate={menu ? "open" : "close"}
-          className="gap-x-2 z-[999]  absolute sm:gap-y-0 gap-y-4 sm:static top-0 left-0 sm:bg-transparent bg-themeBlack/80  sm:flex-row flex-col justify-center w-full h-screen flex items-center  text-themeBlack  tracking-wider"
+          className="gap-x-2 z-[999]  absolute sm:gap-y-0 gap-y-4 sm:static top-0 left-0 sm:bg-transparent dark:sm:bg-transparent dark:bg-themeBlack/80  bg-[#F0E7DB]/80   sm:flex-row flex-col  justify-center w-full sm:h-full h-screen flex items-center  text-themeBlack  tracking-wider"
         >
           <div
             onClick={() => {
               setMenu(false);
             }}
-            className="flex mb-6 sm:hidden  items-center gap-x-2 text-xl group dark:text-white text-themeBlack"
+            className="sm:hidden mb-6"
           >
-            <SiFoodpanda className=" group-hover:-translate-x-[1px] transition-transform  group-hover:rotate-2 origin-top" />
-            <Link href={"/"}>
-              <a className="font-semibold tracking-wider"> PintiDev</a>
-            </Link>
+            <Logo />
           </div>
           {menuRoutes.map((menu, indeks) => (
             <Link href={menu.path} key={indeks}>
@@ -115,7 +111,7 @@ const Header = () => {
           onClick={() => {
             setMenu(true);
           }}
-          className="h-10 sm:hidden w-10 rounded-md flex items-center justify-center bg-themeCyan/50"
+          className="h-10 dark:text-white text-gray-500 sm:hidden w-10 rounded-md flex items-center justify-center bg-themeCyan/50"
         >
           <AiOutlineMenu />
         </div>
