@@ -18,27 +18,27 @@ const Index = () => {
   //Social Media array
   const [socialMedia] = useState([
     {
-      username: "@PintiDevAziz",
-      link: "https://github.com/pintidevaziz",
+      username: "@PintiDev",
+      link: "https://github.com/pintidev",
       icon: <AiFillGithub />,
     },
     {
-      username: "@PintiDevAziz",
-      link: "https://instagram.com/pintidevaziz",
+      username: "@PintiDev",
+      link: "https://instagram.com/pintidev",
       icon: <AiOutlineInstagram />,
     },
     {
-      username: "@PintiDevAziz",
-      link: "https://www.facebook.com/profile.php?id=100077839123950",
+      username: "@PintiDev",
+      link: "https://www.facebook.com/pintidev/",
       icon: <FiFacebook />,
     },
     {
-      username: "@PintiDevAziz",
-      link: "https://twitter.com/pintidevaziz",
+      username: "@PintiDev",
+      link: "https://twitter.com/pintidev",
       icon: <FiTwitter />,
     },
     {
-      username: "@PintiDevAziz",
+      username: "@PintiDev",
       link: "https://www.youtube.com/channel/UCpERt5A7SNd7s5XNAj2mGmw",
       icon: <AiOutlineYoutube />,
     },
@@ -61,7 +61,6 @@ const Index = () => {
       language: "json",
     },
   };
-  const downloadCv = () => {};
   return (
     <motion.div
       variants={animations}
