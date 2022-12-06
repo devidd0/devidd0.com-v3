@@ -53,7 +53,7 @@ const Index = () => {
   born:2006,
   age: ${getDate("2006/04/04")},
   love_to_do:['Coding, Learning New Skills, Gaming','GYM'],
-  married:false,
+  married:'In a relationship',
   job:'Front-End Developer',
   technolgies:['Html','Css','JavaScript','React','NextJs','TaiwlindCss','Firebase',]
 }
