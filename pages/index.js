@@ -106,11 +106,10 @@ const Index = () => {
           Work
         </h2>
         <p>
-          First of all HELLO For now I am student at Baku but I try to find a
-          freelance work Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Quisquam totam dolorem adipisci laudantium excepturi praesentium
-          quia, mollitia incidunt quae facilis culpa officiis laboriosam quis,
-          nisi veniam, laborum repellat recusandae odio?
+          I am Aziz Imranzade (Pinti.dev) from Azerbaijan 🇦🇿 I am myAge I am in
+          love with Technology 🚀 Computers have been my interest since
+          childhood 💻 And Right now I am Software Developer My favorite hobbies
+          are spend time with my love and playing video games
         </p>
         <a
           download={"PintiDevCv"}
@@ -126,7 +125,7 @@ const Index = () => {
           About Me
         </h2>
         <div className="relative w-full   sm:h-[15rem] h-[10rem] ">
-          <Pre {...props} showCopy={false} />
+          currently notihgn ...
         </div>
       </div>
       <div className="my-14">
