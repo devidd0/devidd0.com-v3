@@ -28,10 +28,6 @@ const Header = () => {
       title: "Credits",
       path: "/credits",
     },
-    {
-      title: "Podcasts",
-      path: "/podcasts",
-    },
   ]);
   //! Router
   const router = useRouter();
