@@ -6,6 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 const posts = () => {
   const animations = {
     initial: { opacity: 0, y: 100 },
@@ -45,13 +46,20 @@ const posts = () => {
       exit={"exit"}
       className=" sm:w-[40rem] px-8 sm:px-0   w-full sm:mt-12 min-h-screen font-mono flex-col flex text-white "
     >
-      <Head>
-        <title>PintiDev | Blog</title>
-        <meta
-          name="description"
-          content="PintiDev Blog Posts ,Coding Tutorials, Blog Posts from my life and Dev Journey"
-        />
-      </Head>
+      <NextSeo
+        title="Dev.idd0 Blog"
+        description="Dev.idd0 Blog Posts "
+        additionalMetaTags={[
+          {
+            property: "keywords",
+            content:
+              "Dev.idd0 Blog Posts ,Coding Tutorials, Blog Posts from my life and Dev Journey",
+          },
+        ]}
+      />
+      <div className="dark:bg-[#ffffff14] bg-[#F5F0E8] capitalize text-center px-3 sm:px-0   rounded-lg  mb-5 dark:text-white text-themeBlack w-full sm:h-12 h-14 flex items-center justify-center">
+        <p>Dev.idd0 Blog | Lifestyle, Coding, Social Life </p>
+      </div>
       <h1 className="text-2xl  mb-4">Blog Posts</h1>
       <main className="w-full  flex flex-wrap  justify-center   relative sm:gap-6 gap-3 ">
         {posts.length == 0 ? (
@@ -59,18 +67,17 @@ const posts = () => {
         ) : (
           posts.map((post, indeks) => (
             <Link key={indeks} href={`blog/${post.slug.current}`}>
-              <a className=" w-72 flex-col h-60  flex  overflow-hidden object-cover">
-                <div className="h-36 w-full relative mb-3 rounded-lg overflow-hidden">
+              <a className=" w-72 flex-col flex  overflow-hidden object-cover">
+                <div className="min-h-[8rem] flex-shrink-0 w-full relative mb-3 rounded-lg overflow-hidden   ">
                   <Image
                     src={post.mainImage.asset.url}
-                    layout="fill"
                     placeholder="blur"
+                    className=" object-cover "
                     blurDataURL={"./loading.gif"}
-                    objectFit="cover"
-                    objectPosition={"center"}
+                    fill={true}
                   />
                 </div>
-                <h2 className=" mx-auto text-xl mb-2 capitalize">
+                <h2 className=" mx-auto text-lg mb-2 capitalize text-center">
                   {post.title}
                 </h2>
                 <p className="text-center">{post.summary}</p>

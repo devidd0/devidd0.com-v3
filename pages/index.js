@@ -1,116 +1,155 @@
-import React, { useState } from "react"
+import React from "react";
 
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { AiFillGithub, AiOutlineInstagram } from "react-icons/ai"
-import { FiFacebook, FiTwitter } from "react-icons/fi"
-import { MdKeyboardArrowRight } from "react-icons/md"
-import Typewriter from "typewriter-effect"
-import SocialMediaButton from "../components/index/socialMediaButton"
-import Head from "next/head"
-import getAge from "../helpers/getAge"
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
+import { FiYoutube } from "react-icons/fi";
+import Typewriter from "typewriter-effect";
+import { SiBuymeacoffee, SiLinktree } from "react-icons/si";
+import SocialMediaButton from "../components/index/socialMediaButton";
+import { useState, useEffect } from "react";
+import { AiOutlineWhatsApp } from "react-icons/ai";
 const Index = () => {
   //Social Media array
   const [socialMedia] = useState([
     {
-      username: "@PintiDev",
-      link: "https://github.com/pintidev",
-      icon: <AiFillGithub />
+      username: "@Devidd0",
+      link: "https://github.com/devidd0",
+      icon: <AiFillGithub />,
     },
     {
-      username: "@PintiDev",
-      link: "https://instagram.com/pintidev",
-      icon: <AiOutlineInstagram />
+      username: "@Dev.idd0",
+      link: "https://instagram.com/dev.idd0",
+      icon: <AiOutlineInstagram />,
     },
     {
-      username: "@PintiDev",
-      link: "https://www.facebook.com/pintidev/",
-      icon: <FiFacebook />
+      username: "@Dev.idd0",
+      link: "https://www.youtube.com/channel/UCjvqOd9FGmXz1Ob_vQdh7cQ",
+      icon: <FiYoutube />,
     },
     {
-      username: "@PintiDev",
-      link: "https://twitter.com/pintidev",
-      icon: <FiTwitter />
-    }
-  ])
+      username: "Buy Me A Coffe",
+      link: "https://www.buymeacoffee.com/devidd0",
+      icon: <SiBuymeacoffee />,
+    },
+    {
+      username: "Dev.idd0 On Web",
+      link: "https://linktr.ee/dev.idd0",
+      icon: <SiLinktree />,
+    },
+    {
+      username: "Contact For Work",
+      link: "https://api.whatsapp.com/send/?phone=%2B9940775735560&text&type=phone_number&app_absent=0",
+      icon: <AiOutlineWhatsApp />,
+    },
+  ]);
   const animations = {
     initial: { opacity: 0, y: 100 },
-    animate: { opacity: 1, y: 0 }
-  }
+    animate: { opacity: 1, y: 0 },
+  };
+
   return (
-    <motion.div
-      variants={animations}
-      initial={"initial"}
-      animate={"animate"}
-      transition={{
-        duration: 1,
-        type: "tween"
-      }}
-      exit={"exit"}
-      className=" sm:w-[40rem] w-full px-8 sm:px-0  ">
-      <Head>
-        <title>PintiDev | Home</title>
-        <meta name="description" content="Aziz Imranzade (PintiDev) Front End Developer Home Page About PintiDev" />
-        <meta name="og:title" content="PintiDev Official Web Page" />
-        <meta name="og:url" content="https://pintidev.vercel.app/" />
-      </Head>
-      <div className="dark:bg-[#ffffff14] bg-[#F5F0E8] text-center px-3 sm:px-0   rounded-lg  mb-5 dark:text-white text-themeBlack w-full sm:h-12 h-14 flex items-center justify-center">
-        <p>Hello I am Aziz Front End Developer From Azerbaijan</p>
-      </div>
-      <div className="dark:text-white  flex sm:flex-row flex-col items-center mb-6  gap-y-4 sm:gap-y-0  w-full sm:items-start justify-between">
-        <div>
-          <h1 className="sm:text-3xl text-xl tracking-widest font-semibold mb-1">Aziz Imranzade</h1>
-          <p>Front End Developer(Developer/Gamer)</p>
+    <>
+      <motion.div
+        variants={animations}
+        initial={"initial"}
+        animate={"animate"}
+        transition={{
+          duration: 1,
+          type: "tween",
+        }}
+        exit={"exit"}
+        className=" sm:w-[40rem] w-full px-8 sm:px-0  mt-12 "
+      >
+        <div className="dark:bg-[#ffffff14] bg-[#F5F0E8] text-center px-3 sm:px-0   rounded-lg  mb-5 dark:text-white text-themeBlack w-full sm:h-12 h-14 flex items-center justify-center">
+          <p>Hola 👋 Welcome to my website I am Aziz (Dev.idd0)</p>
         </div>
-        <div className=" sm:w-28 sm:h-28 w-24 flex-shrink-0 h-24 relative rounded-full overflow-hidden border-2 border-gray">
-          <Image src="/avatar.jpg" layout="fill" objectFit="contain" alt="PintiDev Avatar" />
+        <div className="dark:text-white    flex sm:flex-row flex-col items-center mb-6  gap-y-4 sm:gap-y-0  w-full justify-between">
+          <div>
+            <h1 className="sm:text-3xl text-xl tracking-widest font-semibold mb-1">
+              Aziz Imranzade
+            </h1>
+            <p className="text-center">
+              <Typewriter
+                options={{
+                  strings: [
+                    "Full Stack Developer",
+                    "Content Creator",
+                    "Deyviddooo",
+                    "Diciplined",
+                    "Determined",
+                    "Funny Guy",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </p>
+          </div>
+          <div className=" sm:w-32 sm:h-32 w-24 flex-shrink-0 h-24 relative rounded-full overflow-hidden border-2 border-gray">
+            <Image
+              src="/avatar.jpg"
+              alt="Dev.Idd0 Avatar"
+              fill
+              className=" object-cover"
+            />
+          </div>
         </div>
-      </div>
-      <div className="my-10">
-        <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-3">Work</h2>
-        <p>
-          I haven't worked with any big company so far. This is probably due to my age. But I have always tried my best to develop myself as a freelancer, I have prepared various
-          freelance projects, which I had a lot of fun while coding, and I learned a lot. You can contact me on my social media accounts and make job offers.
-        </p>
-        <a
-          download={"PintiDevCv"}
-          href="/PintiDevAzizCv.pdf"
-          className="mt-3 text-[#333] hover:bg-themeCyan/ transition-colors gap-x-2 group w-36 h-10 font-semibold rounded  inline-flex items-center justify-center bg-themeCyan">
-          <span>My Resume</span>
-          <MdKeyboardArrowRight className="text-xl group-hover:translate-x-1 transition-transform" />
-        </a>
-      </div>
-      <div className="my-7">
-        <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-4">About Me</h2>
-        <div className="relative w-full   sm:h-[15rem] h-[10rem] ">
-          <Typewriter
-            options={{
-              strings: [
-                `I am Aziz Imranzade (Pinti.dev) from Azerbaijan 🇦🇿 I am ${getAge(
-                  "04/4/2006"
-                )} and love with Technology 🚀 Computers have been my interest since childhood 💻 And Right now
-              I am Software Developer My favorite hobbies are spend time with my Love and Playing video games`
-              ],
-              autoStart: true,
-              loop: true
-            }}
-          />
+        <div className="my-10">
+          <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-3">
+            Who Am I ? 🤔
+          </h2>
+          <p>
+            I haven't worked with any big company so far. This is probably due
+            to my age. But I have always tried my best to develop myself as a
+            freelancer, I have prepared various freelance projects, which I had
+            a lot of fun while coding, and I learned a lot. You can contact me
+            on my social media accounts and make job offers.
+          </p>
         </div>
-      </div>
-      <div className="my-14">
-        <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-lg mb-4">Social Media</h2>
+        <div className="my-10">
+          <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-4">
+            Work 👨‍💻
+          </h2>
+          <div className="relative w-full ">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, nobis
+            possimus tenetur nam est voluptatum inventore consectetur quas,
+            dolorem exercitationem laudantium nihil consequuntur! Assumenda,
+            esse tenetur porro cum earum non!
+          </div>
+        </div>
+        <div className="my-10">
+          <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-4">
+            What I Love ❣️
+          </h2>
+          <div className="relative w-full">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
+            consequuntur incidunt laborum deleniti ab nesciunt obcaecati nam
+            praesentium repudiandae tempore deserunt dolore vero, quia, quidem
+            aliquid natus in dolores ex?
+          </div>
+        </div>
+        <div className="my-14">
+          <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-lg mb-4">
+            Social Media & Contact 📨
+          </h2>
 
-        <ul className="flex w-full   sm:gap-y-2 gap-y-1 flex-wrap">
-          {socialMedia &&
-            socialMedia.map((item, indeks) => (
-              <li className=" list-none" key={indeks}>
-                <SocialMediaButton link={item.link} icon={item.icon} username={item.username} />
-              </li>
-            ))}
-        </ul>
-      </div>
-    </motion.div>
-  )
-}
+          <ul className="flex w-full   sm:gap-y-2 gap-y-3 flex-wrap">
+            {socialMedia &&
+              socialMedia.map((item, indeks) => (
+                <li className=" list-none" key={indeks}>
+                  <SocialMediaButton
+                    link={item.link}
+                    icon={item.icon}
+                    username={item.username}
+                  />
+                </li>
+              ))}
+          </ul>
+        </div>
+      </motion.div>
+    </>
+  );
+};
 
-export default Index
+export default Index;

@@ -6,6 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 const works = () => {
   const animations = {
     initial: { opacity: 0, y: 100 },
@@ -45,15 +46,15 @@ const works = () => {
       exit={"exit"}
       className=" sm:w-[40rem] px-8 sm:px-0  w-full mt-12 min-h-screen   flex-col flex text-white "
     >
-      <Head>
-        <title>PintiDev | Works</title>
-        <meta
-          name="description"
-          content="PintiDev Work In this page you can look my works live demo soruce codes and other stuff"
-        />
-      </Head>
+      <NextSeo
+        title="Works"
+        description="Dev.Idd0 Work In this page you can look my works live demo soruce codes and other stuff"
+      />
+      <div className="dark:bg-[#ffffff14] bg-[#F5F0E8] capitalize text-center px-3 sm:px-0   rounded-lg  mb-5 dark:text-white text-themeBlack w-full sm:h-12 h-14 flex items-center justify-center">
+        <p>In this page you can look my works live demo soruce codes</p>
+      </div>
       <h1 className="text-2xl  mb-4 ">Works</h1>
-      <main className="w-full  flex flex-wrap  justify-center   relative sm:gap-6 gap-3 ">
+      <main className="w-full  flex flex-wrap  justify-center     relative sm:gap-6 gap-3 ">
         {works.length == 0 ? (
           <img src="./loading.svg" className="mx-auto" />
         ) : (
@@ -63,11 +64,9 @@ const works = () => {
                 <div className="h-36 w-full relative mb-3 rounded-lg overflow-hidden">
                   <Image
                     src={work.mainImage.asset.url || "/loading.svg"}
-                    layout="fill"
                     placeholder="blur"
                     blurDataURL={"./loading.gif"}
-                    objectFit="cover"
-                    objectPosition={"center"}
+                    fill
                   />
                 </div>
                 <h2 className=" mx-auto text-xl mb-2 capitalize">

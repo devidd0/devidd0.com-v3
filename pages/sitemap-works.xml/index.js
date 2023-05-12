@@ -14,7 +14,7 @@ export const getServerSideProps = async (ctx) => {
       if (data) {
         data.forEach((item) => {
           fields.push({
-            loc: `https://pintidev.vercel.app/works/${item.slug.current}`,
+            loc: `https://devidd0.vercel.app/works/${item.slug.current}`,
             lastmod: new Date().toISOString(),
           });
         });

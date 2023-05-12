@@ -47,11 +47,14 @@ const Credits = () => {
         duration: 1,
         type: "tween",
       }}
-      className=" sm:w-[40rem]  h-full w-full px-8"
+      className=" sm:w-[40rem]  h-screen w-full px-8 mt-12"
     >
       <Head>
-        <title>PintiDev | Credits</title>
+        <title>Dev.Idd0 | Credits</title>
       </Head>
+      <div className="dark:bg-[#ffffff14] bg-[#F5F0E8] capitalize text-center px-3 sm:px-0   rounded-lg  mb-5 dark:text-white text-themeBlack w-full sm:h-12 h-14 flex items-center justify-center">
+        <p>Technologies and copyrights used here</p>
+      </div>
       <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-3">
         Technolgies
       </h2>
@@ -79,7 +82,7 @@ const Credits = () => {
         </a>{" "}
         but the codes belong to me You can visit Github repo for more details{" "}
         <a
-          href={"https://github.com/PintiDevAziz/portofiliov3"}
+          href={"https://github.com/devidd0/portofiliov3"}
           target={"_blank"}
           className="dark:text-themePink text-cyan-500"
         >

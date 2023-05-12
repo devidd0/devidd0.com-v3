@@ -3,9 +3,9 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://pintidev.vercel.app
+Host: https://devidd0.vercel.app
 
 # Sitemaps
-Sitemap: https://pintidev.vercel.app/sitemap.xml
-Sitemap: https://pintidev.vercel.app/sitemap-blog.xml
-Sitemap: https://pintidev.vercel.app/sitemap-works.xml
+Sitemap: https://devidd0.vercel.app/sitemap.xml
+Sitemap: https://devidd0.vercel.app/sitemap-blog.xml
+Sitemap: https://devidd0.vercel.app/sitemap-works.xml

@@ -1,15 +1,11 @@
 module.exports = {
-  siteUrl: "https://pintidev.vercel.app",
+  siteUrl: "https://devidd0.vercel.app",
   generateRobotsTxt: true,
-  exclude: [
-    "/sitemap-blog.xml",
-    "/sitemap-works.xml",
-    "/sitemap-index.xml",
-  ],
+  exclude: ["/sitemap-blog.xml", "/sitemap-works.xml", "/sitemap-index.xml"],
   robotsTxtOptions: {
     additionalSitemaps: [
-      "https://pintidev.vercel.app/sitemap-blog.xml",
-      "https://pintidev.vercel.app/sitemap-works.xml",
+      "https://devidd0.vercel.app/sitemap-blog.xml",
+      "https://devidd0.vercel.app/sitemap-works.xml",
     ],
   },
 };

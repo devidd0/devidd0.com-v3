@@ -28,6 +28,10 @@ const Header = () => {
       title: "Credits",
       path: "/credits",
     },
+    {
+      title: "Podcasts",
+      path: "/podcasts",
+    },
   ]);
   //! Router
   const router = useRouter();
@@ -48,10 +52,9 @@ const Header = () => {
     } else {
       setIsMobile(false);
     }
-    console.log(window.innerWidth);
-  }, [window.innerWidth]);
+  }, []);
   return (
-    <header className="flex backdrop-blur-md bg-[#F5F0E8]/60 dark:bg-transparent items-center sm:px-80 px-8 h-16  justify-between text-white font-mono z-[900]  fixed w-full top-0">
+    <header className="flex backdrop-blur-md bg-[#F5F0E8]/60 dark:bg-transparent items-center sm:px-80 px-8 h-16  justify-between text-white font-mono z-[900]  sticky  w-full top-0">
       <div className="flex gap-x-10">
         <Logo />
         <motion.ul

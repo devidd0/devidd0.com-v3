@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Pre from "../../components/blog/Pre";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 const workdetail = () => {
   const router = useRouter();
   const [detail, setDetail] = useState();
@@ -63,17 +64,18 @@ const workdetail = () => {
       }}
       className="sm:w-[40rem] min-h-screen w-full px-6 sm:px-0 flex flex-col gap-y-6 "
     >
+      <NextSeo
+        titleTemplate="Works | %s"
+        title={detail?.title}
+        description={detail?.summary}
+      />
       {detail ? (
         <>
-          <Head>
-            <title>Works | {router.query.work}</title>
-            <meta name="description" content={detail.summary} />
-            <meta name="og:description" content={detail.summary} />
-            <meta
-              name="og:title"
-              content={"Project By PintiDev  " + router.query.work}
-            />
-          </Head>
+          <NextSeo
+            titleTemplate="Works | %s"
+            title={detail?.title}
+            description={detail?.summary}
+          />
           <h1 className="flex items-end  gap-x-1 ">
             <Link href={"/works"}>
               <a className="text-cyan-500 dark:text-themePink hover:underline underline-offset-4">
