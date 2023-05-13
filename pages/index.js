@@ -100,33 +100,27 @@ const Index = () => {
             Who Am I ? 🤔
           </h2>
           <p>
-            I haven't worked with any big company so far. This is probably due
-            to my age. But I have always tried my best to develop myself as a
-            freelancer, I have prepared various freelance projects, which I had
-            a lot of fun while coding, and I learned a lot. You can contact me
-            on my social media accounts and make job offers.
+            Hello everyone. This is me Dev.idd0. I currently live in Azerbaijan
+            and study here. Being in tech is really cool. I am a Nextjs
+            developer. But right now, social media is more appealing to me. I
+            share life advice podcasts, blog posts and YouTube videos. I also
+            have a keen interest in cyber security
           </p>
         </div>
         <div className="my-10">
           <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-4">
             Work 👨‍💻
           </h2>
-          <div className="relative w-full ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, nobis
-            possimus tenetur nam est voluptatum inventore consectetur quas,
-            dolorem exercitationem laudantium nihil consequuntur! Assumenda,
-            esse tenetur porro cum earum non!
-          </div>
+          <div className="relative w-full ">Coming soon .....</div>
         </div>
         <div className="my-10">
           <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-4">
             What I Love ❣️
           </h2>
           <div className="relative w-full">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
-            consequuntur incidunt laborum deleniti ab nesciunt obcaecati nam
-            praesentium repudiandae tempore deserunt dolore vero, quia, quidem
-            aliquid natus in dolores ex?
+            I really love spending time with my family. seeing those people
+            happy is the most valuable thing to me. i will always do whatever it
+            takes to make them happy because i love them so much
           </div>
         </div>
         <div className="my-14">
