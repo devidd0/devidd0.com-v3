@@ -3,9 +3,9 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://devidd0.vercel.app
+Host: https://azizimranzade.vercel.app
 
 # Sitemaps
-Sitemap: https://devidd0.vercel.app/sitemap.xml
-Sitemap: https://devidd0.vercel.app/sitemap-blog.xml
-Sitemap: https://devidd0.vercel.app/sitemap-works.xml
+Sitemap: https://azizimranzade.vercel.app/sitemap.xml
+Sitemap: https://azizimranzade.vercel.app/sitemap-blog.xml
+Sitemap: https://azizimranzade.vercel.app/sitemap-works.xml
