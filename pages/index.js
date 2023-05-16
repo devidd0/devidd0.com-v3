@@ -28,17 +28,17 @@ const Index = () => {
       icon: <FiYoutube />,
     },
     {
-      username: "Buy Me A Coffe",
+      username: "Mənə Kofe al",
       link: "https://www.buymeacoffee.com/devidd0",
       icon: <SiBuymeacoffee />,
     },
     {
-      username: "Dev.idd0 On Web",
+      username: "Dev.idd0 ",
       link: "https://linktr.ee/dev.idd0",
       icon: <SiLinktree />,
     },
     {
-      username: "Contact For Work",
+      username: "İşbirlyi üçün əlaqə",
       link: "https://api.whatsapp.com/send/?phone=%2B9940775735560&text&type=phone_number&app_absent=0",
       icon: <AiOutlineWhatsApp />,
     },
@@ -62,7 +62,7 @@ const Index = () => {
         className=" sm:w-[40rem] w-full px-8 sm:px-0  mt-12 "
       >
         <div className="dark:bg-[#ffffff14] bg-[#F5F0E8] text-center px-3 sm:px-0   rounded-lg  mb-5 dark:text-white text-themeBlack w-full sm:h-12 h-14 flex items-center justify-center">
-          <p>Hola 👋 Welcome to my website I am Aziz (Dev.idd0)</p>
+          <p>Salam 👋 Veb-saytıma xoş gəlmisən Mən Aziz (Dev.idd0)</p>
         </div>
         <div className="dark:text-white    flex sm:flex-row flex-col items-center mb-6  gap-y-4 sm:gap-y-0  w-full justify-between">
           <div>
@@ -97,35 +97,35 @@ const Index = () => {
         </div>
         <div className="my-10">
           <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-3">
-            Who Am I ? 🤔
+            Mən Kiməm ? 🤔
           </h2>
           <p>
-            Hello everyone. This is me Dev.idd0. I currently live in Azerbaijan
-            and study here. Being in tech is really cool. I am a Nextjs
-            developer. But right now, social media is more appealing to me. I
-            share life advice podcasts, blog posts and YouTube videos. I also
-            have a keen interest in cyber security
+            Hamıya salam. Bu mənəm Dev.idd0. Hazırda Azərbaycanda yaşayıram və
+            burada oxuyuram. Texnologiyada olmaq həqiqətən gözəldir. Mən Nextjs
+            tərtibatçısıyam. Amma hazırda sosial media məni daha çox cəlb edir.
+            Həyat məsləhətləri podkastlarını, blog yazılarını və YouTube
+            videolarını paylaşıram. Kibertəhlükəsizliyə də böyük marağım var
           </p>
         </div>
         <div className="my-10">
           <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-4">
-            Work 👨‍💻
+            Karyera 👨‍💻
           </h2>
           <div className="relative w-full ">Coming soon .....</div>
         </div>
         <div className="my-10">
           <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-4">
-            What I Love ❣️
+            Nə Etməyi sevirəm ❣️
           </h2>
           <div className="relative w-full">
-            I really love spending time with my family. seeing those people
-            happy is the most valuable thing to me. i will always do whatever it
-            takes to make them happy because i love them so much
+            Mən həqiqətən ailəmlə vaxt keçirməyi sevirəm. o insanları görəndə
+            xoşbəxt olmaq mənim üçün ən dəyərli şeydir. nə olursa olsun həmişə
+            edəcəm Onları xoşbəxt etmək lazımdır, çünki mən onları çox sevirəm
           </div>
         </div>
         <div className="my-14">
           <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-lg mb-4">
-            Social Media & Contact 📨
+            Sosial Media & Əlaqə 📨
           </h2>
 
           <ul className="flex w-full   sm:gap-y-2 gap-y-3 flex-wrap">

@@ -23,20 +23,20 @@ function MyApp({ Component, pageProps }) {
     <AnimatePresence exitBeforeEnter={true}>
       <DefaultSeo
         titleTemplate="Dev.idd0 | %s "
-        title="Home"
+        title="Ev"
         canonical="https://devidd0.com"
         additionalMetaTags={[
           {
             property: "keywords",
             content:
-              "dev.idd0, Who is Dev.idd0 , Aziz Imranzade, Who is Aziz Imranzade",
+              "Dev.idd0, Dev.idd0 kimdir, Aziz İmranzadə, Əziz İmranzadə kimdir",
           },
           {
             property: "author",
             content: "Dev.idd0, deviddocontact@gmail.com",
           },
         ]}
-        description="Hello, I'm Dev.idd0 and this is my personal web page. You can find out about who I am here. You can read my blogs in the blog section. I also post my Podcasts here "
+        description="Salam, mən Dev.idd0 və bu mənim şəxsi veb səhifəmdir. Mənim kim olduğumu buradan öyrənə bilərsiniz. Bloq bölməsində bloqlarımı oxuya bilərsiniz. Podkastlarımı da burada yerləşdirirəm"
       />
       <ThemeProvider attribute="class">
         <div

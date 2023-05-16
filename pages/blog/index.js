@@ -47,20 +47,20 @@ const posts = () => {
       className=" sm:w-[40rem] px-8 sm:px-0   w-full sm:mt-12 min-h-screen font-mono flex-col flex text-white "
     >
       <NextSeo
-        title="Dev.idd0 Blog"
-        description="Dev.idd0 Blog Posts "
+        title="Bloq"
+        description="Dev.idd0 Bloq Yazıları "
         additionalMetaTags={[
           {
             property: "keywords",
             content:
-              "Dev.idd0 Blog Posts ,Coding Tutorials, Blog Posts from my life and Dev Journey",
+              "Dev.idd0 Bloq Yazıları, Kodlaşdırma Dərslikləri, Həyatımdan və Texnolgiya Səyahətindən Bloq Yazıları",
           },
         ]}
       />
       <div className="dark:bg-[#ffffff14] bg-[#F5F0E8] capitalize text-center px-3 sm:px-0   rounded-lg  mb-5 dark:text-white text-themeBlack w-full sm:h-12 h-14 flex items-center justify-center">
-        <p>Dev.idd0 Blog | Lifestyle, Coding, Social Life </p>
+        <p>Dev.idd0 Blog | Həyat tərzi, Kodlaşdırma, Sosial Həyat </p>
       </div>
-      <h1 className="text-2xl  mb-4">Blog Posts</h1>
+      <h1 className="text-2xl  mb-4">Blog Yazıları</h1>
       <main className="w-full  flex flex-wrap  justify-center   relative sm:gap-6 gap-3 ">
         {posts.length == 0 ? (
           <img src="./loading.svg" className="mx-auto" />

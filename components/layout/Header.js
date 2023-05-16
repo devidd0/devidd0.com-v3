@@ -17,15 +17,15 @@ const Header = () => {
     */
   const [menuRoutes] = useState([
     {
-      title: "Works",
+      title: "İşlərim",
       path: "/works",
     },
     {
-      title: "Blog",
+      title: "Bloq",
       path: "/blog",
     },
     {
-      title: "Credits",
+      title: "Lisenziya",
       path: "/credits",
     },
   ]);

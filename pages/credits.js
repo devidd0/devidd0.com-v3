@@ -50,13 +50,13 @@ const Credits = () => {
       className=" sm:w-[40rem]  h-screen w-full px-8 mt-12"
     >
       <Head>
-        <title>Dev.Idd0 | Credits</title>
+        <title>Dev.Idd0 | Lisenziya</title>
       </Head>
-      <div className="dark:bg-[#ffffff14] bg-[#F5F0E8] capitalize text-center px-3 sm:px-0   rounded-lg  mb-5 dark:text-white text-themeBlack w-full sm:h-12 h-14 flex items-center justify-center">
-        <p>Technologies and copyrights used here</p>
+      <div className="dark:bg-[#ffffff14]  bg-[#F5F0E8] capitalize text-center px-3 sm:px-0   rounded-lg  mb-5 dark:text-white text-themeBlack w-full sm:h-12 h-14 flex items-center justify-center">
+        <p>Burada İstifadə olunan texnologiyalar və müəllif hüquqları</p>
       </div>
       <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-3">
-        Technolgies
+        Texnologiyalar
       </h2>
       <ul className="flex flex-col  gap-y-2 mb-10">
         {technolgies.map((item, indeks) => (
@@ -69,18 +69,19 @@ const Credits = () => {
         ))}
       </ul>
       <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-3">
-        Inspared By
+        İlhamlanmışdır
       </h2>
       <p className="mb-10">
-        This web page was inspired by{" "}
+        Bu veb səhifədən{" "}
         <a
           href="https://craftz.dog"
           target={"_blank"}
           className="dark:text-themePink text-cyan-500"
         >
-          Takuya Matsuyama (crafzdog)
-        </a>{" "}
-        but the codes belong to me You can visit Github repo for more details{" "}
+          Takuya Matsuyama (crafzdog){" "}
+        </a>
+        ilhamlanıb lakin kodlar mənə məxsusdur. Ətraflı məlumat üçün Github
+        repo-ya baş çəkə bilərsiniz
         <a
           href={"https://github.com/devidd0/portofiliov3"}
           target={"_blank"}
@@ -89,31 +90,6 @@ const Credits = () => {
           View Repo
         </a>
       </p>
-      <h2 className=" underline underline-offset-8  decoration-gray-400 font-semibold sm:text-2xl text-xl mb-3">
-        Assets
-      </h2>
-      <ul>
-        <li>
-          Voxel Room Model{" "}
-          <a
-            href={"https://sketchfab.com/moyicat"}
-            target={"_blank"}
-            className="dark:text-themePink text-cyan-500"
-          >
-            By Moyicat
-          </a>
-        </li>
-        <li>
-          Panda icon{" "}
-          <a
-            href={"https://www.flaticon.com/free-icon/panda_616563"}
-            target={"_blank"}
-            className="dark:text-themePink text-cyan-500"
-          >
-            By FlatIcon
-          </a>
-        </li>
-      </ul>
     </motion.div>
   );
 };
